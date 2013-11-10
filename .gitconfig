@@ -1,6 +1,7 @@
 [user]
-	email = matti.kortelainen@cern.ch
 	name = Matti Kortelainen
+	email = matti.kortelainen@cern.ch
+	github = makortel
 
 [core]
         pager = less -FRSXi
