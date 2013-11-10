@@ -1,0 +1,28 @@
+[user]
+	email = matti.kortelainen@cern.ch
+	name = Matti Kortelainen
+
+[core]
+        pager = less -FRSXi
+
+[alias]
+        tree = log --graph  --pretty=oneline --abbrev-commit --decorate
+        # https://coderwall.com/p/euwpig
+        lg = log --pretty=format:'%C(bold red)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --no-merges
+        tree = log --graph --decorate --pretty=format:'%C(bold red)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+
+[color]
+        ui = auto
+# Theme originally from from http://nathanhoad.net/how-to-colours-in-git
+[color "branch"]
+  current = green bold
+  remote = yellow
+[color "diff"]
+  meta = yellow bold
+  frag = magenta
+  old = red bold
+  new = green bold
+[color "status"]
+  added = green bold
+  changed = yellow bold
+  untracked = cyan bold
