@@ -5,6 +5,8 @@
 
 [core]
         pager = less -FRSXi
+        sparsecheckout = true
+        excludesfile = ~/dotfiles/.gitignore
 
 [alias]
 #        tree = log --graph  --pretty=oneline --abbrev-commit --decorate
