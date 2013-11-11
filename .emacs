@@ -42,12 +42,14 @@
 (set-scroll-bar-mode `right)
 
 ;; color theme
-(require 'color-theme)
-(color-theme-initialize)
-(color-theme-dark-laptop)
+(unless (null window-system)
+  (require 'color-theme)
+  (color-theme-initialize)
+  (color-theme-dark-laptop))
 
-(load "auctex.el" nil t t)
-(load "preview-latex.el" nil t t)
+(unless (null window-system)
+  (load "auctex.el" nil t t)
+  (load "preview-latex.el" nil t t))
 
 (setq auto-mode-alist (cons '("\.lua$" . lua-mode) auto-mode-alist))
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
@@ -56,9 +58,11 @@
 (setq tramp-auto-save-directory "~/.emacs.d/tramp-autosave")
 
 ;; http://stackoverflow.com/questions/1229142/how-can-i-save-my-mini-buffer-history-in-emacs
-(setq savehist-file "~/.emacs.d/savehist")
-(savehist-mode 1)
-(setq savehist-additional-variables '(kill-ring search-ring regexp-search-ring))
+;; http://ergoemacs.org/emacs/elisp_check_defined.html
+(when (fboundp 'savehist-mode)
+  (setq savehist-file "~/.emacs.d/savehist")
+  (savehist-mode 1)
+  (setq savehist-additional-variables '(kill-ring search-ring regexp-search-ring)))
 
 ;; Add local lisp folder to load-path
 ;(setq load-path (append load-path (list "~/elisp")))
