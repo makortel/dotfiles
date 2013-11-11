@@ -7,13 +7,15 @@
         pager = less -FRSXi
 
 [alias]
-        tree = log --graph  --pretty=oneline --abbrev-commit --decorate
+#        tree = log --graph  --pretty=oneline --abbrev-commit --decorate
         # https://coderwall.com/p/euwpig
         lg = log --pretty=format:'%C(bold red)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --no-merges
+        lgmerges = log --pretty=format:'%C(bold red)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --merges
         tree = log --graph --decorate --pretty=format:'%C(bold red)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 
 [color]
         ui = auto
+
 # Theme originally from from http://nathanhoad.net/how-to-colours-in-git
 [color "branch"]
   current = green bold
