@@ -31,3 +31,7 @@
   added = green bold
   changed = yellow bold
   untracked = cyan bold
+
+# http://stackoverflow.com/questions/15321472/how-could-i-force-mergetool-gui-kdiff3-to-be-always-shown
+[mergetool "kdiff3NoAuto"]
+	cmd = kdiff3 --L1 \"$MERGED (Base)\" --L2 \"$MERGED (Local)\" --L3 \"$MERGED (Remote)\" -o \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
