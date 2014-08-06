@@ -56,6 +56,9 @@
 
 ;; set autosave directory for tramp
 (setq tramp-auto-save-directory "~/.emacs.d/tramp-autosave")
+;; http://www.emacswiki.org/emacs/TrampMode#toc2
+;; Faster than the default scp
+(setq tramp-default-method "ssh")
 
 ;; http://stackoverflow.com/questions/1229142/how-can-i-save-my-mini-buffer-history-in-emacs
 ;; http://ergoemacs.org/emacs/elisp_check_defined.html
