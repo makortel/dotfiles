@@ -97,6 +97,7 @@
 ;; (add-to-list 'auto-mode-alist '("\\.asy$" . asy-mode))
 
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.icc\\'" . c++-mode))
 
 ;; http://stackoverflow.com/questions/8549351/c11-mode-or-settings-for-emacs
 (require 'font-lock)
