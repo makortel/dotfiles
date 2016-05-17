@@ -15,6 +15,8 @@
         lgmerges = log --pretty=format:'%C(bold red)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --merges
         tree = log --graph --decorate --pretty=format:'%C(bold red)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
         ffmerge = merge --ff-only
+# http://blogs.atlassian.com/2014/10/advanced-git-aliases/
+        cms-diff-pkg = "!f() { git diff --name-only $@ | cut -d/ -f-2 | uniq; }; f"
 
 [color]
         ui = auto
