@@ -1,4 +1,6 @@
 *~
+*.orig
+*.patch
 *.root
 \#*\#
 crab_*
