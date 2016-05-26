@@ -54,6 +54,20 @@
 (setq auto-mode-alist (cons '("\.lua$" . lua-mode) auto-mode-alist))
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
 
+;; set auto-save and auto-backup in general
+;; http://emacswiki.org/emacs/AutoSave
+;; http://emacswiki.org/emacs/BackupDirectory
+(setq
+   backup-by-copying t      ; don't clobber symlinks
+   backup-directory-alist
+    '(("." . "~/.emacs.d/autosave"))    ; don't litter my fs tree
+   delete-old-versions t
+   kept-new-versions 6
+   kept-old-versions 2
+   version-control t)       ; use versioned backups
+(setq auto-save-file-name-transforms
+      `((".*" ,"~/.emacs.d/autosave" t)))
+
 ;; set autosave directory for tramp
 (setq tramp-auto-save-directory "~/.emacs.d/tramp-autosave")
 ;; http://www.emacswiki.org/emacs/TrampMode#toc2
