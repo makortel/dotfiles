@@ -18,6 +18,7 @@
 # http://blogs.atlassian.com/2014/10/advanced-git-aliases/
         cms-diff-pkg = "!f() { git diff --name-only $@ | cut -d/ -f-2 | uniq; }; f"
         cms-remote-add = "!f() { git remote add $1 https://github.com/$1/cmssw.git; }; f"
+        amend-author-date = "!f() { git commit --amend --no-edit --date \"$(git show -s --format=%ai $1)\"; }; f"
 
 [color]
         ui = auto
