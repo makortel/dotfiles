@@ -19,6 +19,7 @@
         cms-diff-pkg = "!f() { git diff --name-only $@ | cut -d/ -f-2 | uniq; }; f"
         cms-remote-add = "!f() { git remote add $1 https://github.com/$1/cmssw.git; }; f"
         amend-author-date = "!f() { git commit --amend --no-edit --date \"$(git show -s --format=%ai $1)\"; }; f"
+        listrefs = for-each-ref --sort=committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' # refs/heads or refs/remotes(/makortel)
 
 [color]
         ui = auto
