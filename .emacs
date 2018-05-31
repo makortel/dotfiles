@@ -41,11 +41,14 @@
 (setq scroll-bar-mode-explicit t) 
 (set-scroll-bar-mode `right)
 
-;; color theme
-(unless (null window-system)
-  (require 'color-theme)
-  (color-theme-initialize)
-  (color-theme-dark-laptop))
+;; color theme, < emacs 24
+;(unless (null window-system)
+;  (require 'color-theme)
+;  (color-theme-initialize)
+;  (color-theme-dark-laptop) )
+;; for >= 24
+;https://emacsthemes.com/themes/dark-laptop-theme.html
+(require 'dark-laptop-theme)
 
 (unless (null window-system)
   (load "auctex.el" nil t t)
