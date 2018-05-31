@@ -115,6 +115,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.icc\\'" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
 
 ;; tmux emacs control arrow
 (define-key input-decode-map "\e[1;5A" [C-up])
