@@ -116,6 +116,12 @@
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.icc\\'" . c++-mode))
 
+;; tmux emacs control arrow
+(define-key input-decode-map "\e[1;5A" [C-up])
+(define-key input-decode-map "\e[1;5B" [C-down])
+(define-key input-decode-map "\e[1;5C" [C-right])
+(define-key input-decode-map "\e[1;5D" [C-left])
+
 ;; http://stackoverflow.com/questions/8549351/c11-mode-or-settings-for-emacs
 (require 'font-lock)
 (defun --copy-face (new-face face)

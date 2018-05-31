@@ -28,3 +28,8 @@ xterm*|rxvt*)
 *)
     ;;
 esac
+
+# https://stackoverflow.com/questions/1401002/trick-an-application-into-thinking-its-stdout-is-a-terminal-not-a-pipe
+faketty() {
+    script --return -qfc "$(printf "%q " "$@")" /dev/null
+}
