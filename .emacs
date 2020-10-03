@@ -3,7 +3,9 @@
 ;;; uncomment this line to disable loading of "default.el" at startup
 ;; (setq inhibit-default-init t)
 
-(set-default-font "7x13")
+; https://blog.leiwang.info/posts/emacs-set-default-font/
+;(set-default-font "7x13")
+(set-frame-font "7x13")
 ; http://superuser.com/questions/210555/emacs-font-settings-not-working-in-new-frame
 (add-to-list 'default-frame-alist
              '(font . "7x13"))
@@ -46,9 +48,11 @@
 ;  (require 'color-theme)
 ;  (color-theme-initialize)
 ;  (color-theme-dark-laptop) )
-;; for >= 24
-;https://emacsthemes.com/themes/dark-laptop-theme.html
-(require 'dark-laptop-theme)
+;; for >= 24, < 27
+;;https://emacsthemes.com/themes/dark-laptop-theme.html
+;; for >= 27
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(load-theme 'dark-laptop t)
 
 (unless (null window-system)
   (load "auctex.el" nil t t)
