@@ -33,3 +33,11 @@ esac
 faketty() {
     script --return -qfc "$(printf "%q " "$@")" /dev/null
 }
+
+# ~https://stackoverflow.com/questions/42212099/how-do-i-disable-the-weird-characters-from-bracketed-paste-mode-on-the-mac-os~
+function enable_bracketed_paste() {
+    printf '\e[?2004h' ;
+}
+function disable_bracketed_paste() {
+    printf '\e[?2004l' ;
+}
